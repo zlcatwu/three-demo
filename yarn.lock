@@ -444,6 +444,11 @@ globals@^13.6.0:
   dependencies:
     type-fest "^0.20.2"
 
+gsap@^3.6.1:
+  version "3.6.1"
+  resolved "https://registry.npm.taobao.org/gsap/download/gsap-3.6.1.tgz#618f2338044d2b78b8cbced8ea8bf246d1cf6407"
+  integrity sha1-YY8jOARNK3i4y87Y6ovyRtHPZAc=
+
 has-flag@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npm.taobao.org/has-flag/download/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"

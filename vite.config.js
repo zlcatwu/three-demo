@@ -19,6 +19,10 @@ module.exports = {
         assetsDir: 'static'
     },
     server: {
-        open: '/three-demo/apps/entry/index.html'
+        open: '/three-demo/apps/entry/index.html',
+        watch: {
+            usePolling: true,
+            interval: 500
+        }
     }
 };
