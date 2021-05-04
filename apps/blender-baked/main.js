@@ -2,12 +2,14 @@ import * as THREE from 'three';
 import dat from 'dat.gui';
 import Stats from 'stats.js';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import {DRACOLoader} from 'three/examples/jsm/loaders/DRACOLoader';
 import {GLTFLoader} from 'three/examples/jsm/loaders/GLTFLoader';
 import fireFliesVertexShader from './shaders/fireflies/vertexShader.glsl?raw';
 import fireFliesFragmentShader from './shaders/fireflies/fragmentShader.glsl?raw';
 import portalVertexShader from './shaders/portal/vertexShader.glsl?raw';
 import portalFragmentShader from './shaders/portal/fragmentShader.glsl?raw';
+
+import textureBaked from './static/baked.jpg?url';
+import modelScene from './static/scene.glb?url';
 
 /**
  * Sizes
@@ -73,7 +75,7 @@ const scene = new THREE.Scene();
  * Texture
  */
 
-const bakedTexture = textureLoader.load('./static/baked.jpg');
+const bakedTexture = textureLoader.load(textureBaked);
 bakedTexture.flipY = false;
 bakedTexture.encoding = THREE.sRGBEncoding;
 
@@ -115,7 +117,7 @@ gui.addColor(debugObject, 'portalColorEnd')
  */
 
 gltfLoader.load(
-    './static/scene.glb',
+    modelScene,
     gltf => {
         gltf.scene.children.find(item => item.name === 'baked')
             .material = bakedMaterial;
